@@ -4,6 +4,9 @@
   "port": 5432,
   "username": "postgres",
   "password": "lindinha",
+  "entities": [
+    "./src/models/*.ts"
+  ],
   "database": "yt_permission",
   "migrations": [
     "./src/database/migrations/*.ts"

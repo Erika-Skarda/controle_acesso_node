@@ -55,11 +55,17 @@ npm start
 ## ☑️ Funcionalidades
 
 🙆‍ <b>Cadastro de Usuários</b>
+
 🙆‍ <b>Autenticação de Usuários</b> 
+
 🙆‍ <b>Cadastro de Permissões</b> 
+
 🙆‍ <b>Cadastro de Roles</b>
+
 🙆‍ <b>Cadastro de Produtos </b> 
+
 🙆‍ <b>Conexão de Usuários - Roles</b> 
+
 🙆‍ <b>Conexão de Permissões - Roles</b> 
 
 
