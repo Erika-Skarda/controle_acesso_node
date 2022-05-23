@@ -1,8 +1,10 @@
 import express from 'express';
 import { userRouter } from './routes/routes';
 import 'reflect-metadata';
-
+import dotenv from "dotenv";
 import "./database";
+
+dotenv.config();
 
 const app = express();
 
