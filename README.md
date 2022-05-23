@@ -34,6 +34,9 @@ Por último, suba a aplicação:
 ```
 npm start
 ```
+```
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+```
 
 ## :books: Linguagens, dependencias e libs utilizadas 
 

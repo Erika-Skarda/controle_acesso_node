@@ -39,5 +39,4 @@ export class CreatePermissions1653331890997 implements MigrationInterface {
 	public async down(queryRunner: QueryRunner): Promise<void> {
 		await queryRunner.dropTable('permissions');
 	}
-
 }
