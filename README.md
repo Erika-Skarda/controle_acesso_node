@@ -71,7 +71,7 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 🙆‍ <b>Conexão de Permissões - Roles</b> 
 
-
+![Tela no MongoDB da collection dos fornecedores](https://github.com/Erika-Skarda/controle_acesso_node/blob/main/relations.png)
 ## Desenvolvido Por :octocat:
 
 | [<img src="https://avatars1.githubusercontent.com/u/60902843?s=400&u=fca9219fa3416ab4b849077b9248f71d44133283&v=4" width=115><br><sub>Erika Skarda</sub>](https://www.linkedin.com/in/erika-skarda/) | 
