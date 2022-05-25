@@ -1,13 +1,15 @@
 import { getCustomRepository } from 'typeorm';
 import { Request, Response } from 'express';
 import RoleRepository from '../repositories/RoleRepository';
+import PermissionRepository from '../repositories/PermissionRepository';
 
 class RoleController {
 
   async create(request: Request, response: Response) {
     const roleRepository = getCustomRepository(RoleRepository);
-  
-    const { name, description } = request.body;
+    const permissionRepository = getCustomRepository(PermissionRepository);
+
+    const { name, description, permissions } = request.body;
 
     const existRole =  await roleRepository.findOne({ name: name });
 
@@ -17,9 +19,12 @@ class RoleController {
       });
     }
 
+    const existsPermissions = await permissionRepository.findByIds(permissions)
+
     const role = roleRepository.create({
       name,
-      description
+      description,
+      permission: existsPermissions
     })
 
     await roleRepository.save(role);

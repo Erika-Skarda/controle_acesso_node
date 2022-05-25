@@ -12,7 +12,10 @@ class SessionController {
 
     const userRepository = getCustomRepository(UserRepository);
 
-    const user = await userRepository.findOne({username});
+    const user = await userRepository.findOne(
+      { username },
+      { relations: ['roles'] } 
+    );
 
     if(!user) {
       return response.status(400).json({
@@ -28,7 +31,11 @@ class SessionController {
       });
     }
 
-    const token = sign({}, "cd3c651c1b92acfe24910099fce544ce", {
+    const roles = user.roles.map(role => role.name)
+
+    const token = sign(
+      { roles },
+      "cd3c651c1b92acfe24910099fce544ce", {
       subject: user.id,
       expiresIn: '1d'
     });
@@ -38,7 +45,6 @@ class SessionController {
       user
     })
   }
-
 }
 
 export default SessionController;

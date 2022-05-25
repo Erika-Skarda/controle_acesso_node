@@ -1,9 +1,12 @@
+import { JoinTable } from 'typeorm';
 import { 
   CreateDateColumn,
   PrimaryGeneratedColumn,
   Column,
-  Entity }
-from 'typeorm';
+  Entity, 
+  ManyToMany
+} from 'typeorm';
+import Permission from './Permission';
 
 @Entity('roles')
 class Role {
@@ -19,6 +22,14 @@ class Role {
 
   @CreateDateColumn()
   created_at: Date;
+
+  @ManyToMany(() => Permission)
+  @JoinTable({
+    name: 'permissions_roles',
+    joinColumns: [{ name: 'role_id' }],
+    inverseJoinColumns: [{ name: 'permission_id'}]
+  })
+  permission: Permission[]
 }
 
 export default Role;
